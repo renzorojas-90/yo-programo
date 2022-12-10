@@ -17,25 +17,24 @@ public class Educacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;    
 
-    String nombreInstituto;
-    String tituloEducacion;
-    String periodo;
+    private String nombreInstituto;
+    private String tituloEducacion;
+    private String periodo;
     
     @ManyToOne
-    Persona perso;
+    private Persona perso;
     
     public Educacion() {
     }
 
-    public Educacion(long id, String nombreInstituto, String tituloEducacion, String periodo) {
+    public Educacion(long id, String nombreInstituto, String tituloEducacion, String periodo, Persona perso) {
         this.id = id;
         this.nombreInstituto = nombreInstituto;
         this.tituloEducacion = tituloEducacion;
         this.periodo = periodo;
+        this.perso = perso;
     }
 
-   
-    
-    
+ 
     
 }

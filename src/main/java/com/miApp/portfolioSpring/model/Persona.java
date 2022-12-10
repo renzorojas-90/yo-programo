@@ -26,18 +26,19 @@ public class Persona  {
     private String nombre;
     private String apellido;
     
-    @OneToMany
-    private List<Educacion> listaEducacion;  
+    @OneToMany(mappedBy ="perso")
+    List<Educacion> listaEducacion;  
 
     public Persona() {
     }
 
-    public Persona(long id, String nombre, String apellido) {
+    public Persona(long id, String nombre, String apellido, List<Educacion> listaEducacion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.listaEducacion = listaEducacion;
     }
-    
+
     
     
     
