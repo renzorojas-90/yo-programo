@@ -20,10 +20,7 @@ public class EducacionController {
     @Autowired
     public IEducacionService eduServ;
     
-    @PostMapping("/new/educacion")
-    public void crearEducacion(@RequestBody Educacion edu){
-        eduServ.crearEducacion(edu);
-    }
+    
     
     @GetMapping("ver/educacion")
     @ResponseBody

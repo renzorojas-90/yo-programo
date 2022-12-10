@@ -1,6 +1,7 @@
 
 package com.miApp.portfolioSpring.service;
 
+import com.miApp.portfolioSpring.model.Educacion;
 import com.miApp.portfolioSpring.model.Persona;
 import com.miApp.portfolioSpring.repository.PersonaRepository;
 import java.util.List;
@@ -12,6 +13,7 @@ public class PersonaService implements IPersonaService {
 
     @Autowired
      public PersonaRepository persoRepo;
+     public EducacionService eduServ; 
     
     @Override
     public List<Persona> verPersonas() {
@@ -35,6 +37,16 @@ public class PersonaService implements IPersonaService {
     
     @Override
     public void editarPersona(Persona per){
+        persoRepo.save(per);
+    }
+
+    @Override
+    public void agregarEducacion(Educacion edu, Persona per) {
+        
+        System.out.println(edu);
+        System.out.println(":"+edu.getNombreInstituto());
+        Educacion edu_id = eduServ.crearEducacion(edu);
+        per.addEducacion(edu_id);
         persoRepo.save(per);
     }
     

@@ -5,6 +5,7 @@
  */
 package com.miApp.portfolioSpring.controller;
 
+import com.miApp.portfolioSpring.model.Educacion;
 import com.miApp.portfolioSpring.model.Persona;
 import com.miApp.portfolioSpring.service.IPersonaService;
 import java.util.List;
@@ -44,6 +45,11 @@ public class controller {
     public void editarPersona(@RequestBody Persona pers){
         persoServ.editarPersona(pers);
     }
+    
+    
+     @PostMapping("/new/educacion/{id}")
+    public void crearEducacion(@RequestBody Educacion edu,@PathVariable Persona id){
+        persoServ.agregarEducacion(edu, id);
 }
-
+}
 

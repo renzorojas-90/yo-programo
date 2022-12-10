@@ -27,8 +27,10 @@ public class Persona  {
     private String nombre;
     private String apellido;
     
-    @OneToMany(mappedBy ="perso")
-    List<Educacion> listaEducacion;  
+    @OneToMany
+    List<Educacion> listaEducacion;      
+
+
 
     public Persona() {
     }
@@ -40,7 +42,9 @@ public class Persona  {
         this.listaEducacion = new ArrayList<>();
     }
 
-    
+    public void addEducacion(Educacion edu){
+        this.listaEducacion.add(edu);
+    }
     
     
 }
