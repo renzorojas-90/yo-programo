@@ -6,6 +6,7 @@
 package com.miApp.portfolioSpring.model;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,11 +33,11 @@ public class Persona  {
     public Persona() {
     }
 
-    public Persona(long id, String nombre, String apellido, List<Educacion> listaEducacion) {
+    public Persona(long id, String nombre, String apellido) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.listaEducacion = listaEducacion;
+        this.listaEducacion = new ArrayList<>();
     }
 
     
