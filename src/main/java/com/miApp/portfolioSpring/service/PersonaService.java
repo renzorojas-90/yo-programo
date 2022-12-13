@@ -13,6 +13,8 @@ public class PersonaService implements IPersonaService {
 
     @Autowired
      public PersonaRepository persoRepo;
+    
+    @Autowired
      public EducacionService eduServ; 
     
     @Override
@@ -45,9 +47,18 @@ public class PersonaService implements IPersonaService {
         
         System.out.println(edu);
         System.out.println(":"+edu.getNombreInstituto());
+        
         Educacion edu_id = eduServ.crearEducacion(edu);
         per.addEducacion(edu_id);
         persoRepo.save(per);
+        
+        for(Educacion lista : per.getListaEducacion()){
+            
+            System.out.println("lista completa: " + lista.getNombreInstituto());
+            
+            
+        }
+        
     }
     
    
