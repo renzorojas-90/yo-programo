@@ -27,7 +27,7 @@ public class Persona  {
     private String nombre;
     private String apellido;
     
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
     List<Educacion> listaEducacion;      
 
 

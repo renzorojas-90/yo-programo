@@ -50,6 +50,6 @@ public class controller {
      @PostMapping("/new/educacion/{id}")
     public void crearEducacion(@RequestBody Educacion edu,@PathVariable Persona id){
         persoServ.agregarEducacion(edu, id);
-}
+    }
 }
 
