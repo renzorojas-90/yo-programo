@@ -46,7 +46,7 @@ public class controller {
         persoServ.editarPersona(pers);
     }
     
-    
+    //aqui se crea el endpoitn  se le envia la (educacion y el id de persona) a la funcion agregarEducacion
      @PostMapping("/new/educacion/{id}")
     public void crearEducacion(@RequestBody Educacion edu,@PathVariable Persona id){
         persoServ.agregarEducacion(edu, id);

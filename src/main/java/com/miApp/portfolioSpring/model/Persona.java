@@ -27,7 +27,7 @@ public class Persona  {
     private String nombre;
     private String apellido;
     
-    @OneToMany(orphanRemoval = true)
+    @OneToMany
     List<Educacion> listaEducacion;      
 
 
@@ -42,6 +42,7 @@ public class Persona  {
         this.listaEducacion = new ArrayList<>();
     }
 
+        //estafuncion es llamada de EducacionService y le agrega una educacion a la lista
     public void addEducacion(Educacion edu){
         this.listaEducacion.add(edu);
     }
